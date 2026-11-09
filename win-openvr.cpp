@@ -527,9 +527,9 @@ static obs_properties_t *win_openvr_properties(void *data)
 	context->crop_right = p;
 	obs_property_set_modified_callback(p, crop_preset_manual);
 
-	p = obs_properties_add_button(props, "resetsteamvr",
+	p = obs_properties_add_button2(props, "resetsteamvr",
 				      "Reinitialize OpenVR Source",
-				      button_reset_callback);
+				      button_reset_callback, data);
 
 	win_openvr_update_properties(data);
 
